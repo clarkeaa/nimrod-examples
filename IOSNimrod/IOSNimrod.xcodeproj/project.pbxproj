@@ -1,0 +1,395 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		43358AE819C3AAAA005C57D1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43358AE719C3AAAA005C57D1 /* Foundation.framework */; };
+		43358AEA19C3AAAA005C57D1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43358AE919C3AAAA005C57D1 /* CoreGraphics.framework */; };
+		43358AEC19C3AAAA005C57D1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43358AEB19C3AAAA005C57D1 /* UIKit.framework */; };
+		43358AF219C3AAAA005C57D1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43358AF019C3AAAA005C57D1 /* InfoPlist.strings */; };
+		43358AF419C3AAAA005C57D1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 43358AF319C3AAAA005C57D1 /* main.m */; };
+		43358AF819C3AAAA005C57D1 /* NRAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 43358AF719C3AAAA005C57D1 /* NRAppDelegate.m */; };
+		43358AFB19C3AAAA005C57D1 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43358AF919C3AAAA005C57D1 /* Main_iPhone.storyboard */; };
+		43358AFE19C3AAAA005C57D1 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43358AFC19C3AAAA005C57D1 /* Main_iPad.storyboard */; };
+		43358B0119C3AAAA005C57D1 /* NRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43358B0019C3AAAA005C57D1 /* NRViewController.m */; };
+		43358B0319C3AAAA005C57D1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43358B0219C3AAAA005C57D1 /* Images.xcassets */; };
+		43358B1E19C3AB01005C57D1 /* test.nim in Sources */ = {isa = PBXBuildFile; fileRef = 43358B1C19C3AADD005C57D1 /* test.nim */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXBuildRule section */
+		43358B1F19C3ABB5005C57D1 /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			filePatterns = "*.nim";
+			fileType = pattern.proxy;
+			isEditable = 1;
+			outputFiles = (
+				"$(DERIVED_FILE_DIR)/stdlib_system.m",
+				"$(DERIVED_FILE_DIR)/$(INPUT_FILE_BASE).h",
+				"$(DERIVED_FILE_DIR)/$(INPUT_FILE_BASE).m",
+			);
+			script = "nimrod objc --noMain  --app:lib \\\n--nimcache:${DERIVED_FILE_DIR} --compileOnly \\\n--header --cpu:i386 ${INPUT_FILE_PATH}";
+		};
+/* End PBXBuildRule section */
+
+/* Begin PBXFileReference section */
+		43358AA819C3A057005C57D1 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		43358AAB19C3A057005C57D1 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		43358AAC19C3A057005C57D1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		43358AAD19C3A057005C57D1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		43358AC719C3A057005C57D1 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		43358AE619C3AAAA005C57D1 /* NimrodIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NimrodIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		43358AE719C3AAAA005C57D1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		43358AE919C3AAAA005C57D1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		43358AEB19C3AAAA005C57D1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		43358AEF19C3AAAA005C57D1 /* NimrodIOS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NimrodIOS-Info.plist"; sourceTree = "<group>"; };
+		43358AF119C3AAAA005C57D1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		43358AF319C3AAAA005C57D1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		43358AF519C3AAAA005C57D1 /* NimrodIOS-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NimrodIOS-Prefix.pch"; sourceTree = "<group>"; };
+		43358AF619C3AAAA005C57D1 /* NRAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NRAppDelegate.h; sourceTree = "<group>"; };
+		43358AF719C3AAAA005C57D1 /* NRAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NRAppDelegate.m; sourceTree = "<group>"; };
+		43358AFA19C3AAAA005C57D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		43358AFD19C3AAAA005C57D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		43358AFF19C3AAAA005C57D1 /* NRViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NRViewController.h; sourceTree = "<group>"; };
+		43358B0019C3AAAA005C57D1 /* NRViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NRViewController.m; sourceTree = "<group>"; };
+		43358B0219C3AAAA005C57D1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		43358B1C19C3AADD005C57D1 /* test.nim */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test.nim; sourceTree = "<group>"; };
+		43358B2019C3ADF5005C57D1 /* nimbase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = nimbase.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		43358AE319C3AAAA005C57D1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43358AEA19C3AAAA005C57D1 /* CoreGraphics.framework in Frameworks */,
+				43358AEC19C3AAAA005C57D1 /* UIKit.framework in Frameworks */,
+				43358AE819C3AAAA005C57D1 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		43358A9C19C3A057005C57D1 = {
+			isa = PBXGroup;
+			children = (
+				43358AED19C3AAAA005C57D1 /* NimrodIOS */,
+				43358AA719C3A057005C57D1 /* Frameworks */,
+				43358AA619C3A057005C57D1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		43358AA619C3A057005C57D1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				43358AE619C3AAAA005C57D1 /* NimrodIOS.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		43358AA719C3A057005C57D1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				43358AA819C3A057005C57D1 /* Cocoa.framework */,
+				43358AC719C3A057005C57D1 /* XCTest.framework */,
+				43358AE719C3AAAA005C57D1 /* Foundation.framework */,
+				43358AE919C3AAAA005C57D1 /* CoreGraphics.framework */,
+				43358AEB19C3AAAA005C57D1 /* UIKit.framework */,
+				43358AAA19C3A057005C57D1 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		43358AAA19C3A057005C57D1 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				43358AAB19C3A057005C57D1 /* AppKit.framework */,
+				43358AAC19C3A057005C57D1 /* CoreData.framework */,
+				43358AAD19C3A057005C57D1 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		43358AED19C3AAAA005C57D1 /* NimrodIOS */ = {
+			isa = PBXGroup;
+			children = (
+				43358B2019C3ADF5005C57D1 /* nimbase.h */,
+				43358B1C19C3AADD005C57D1 /* test.nim */,
+				43358AF619C3AAAA005C57D1 /* NRAppDelegate.h */,
+				43358AF719C3AAAA005C57D1 /* NRAppDelegate.m */,
+				43358AF919C3AAAA005C57D1 /* Main_iPhone.storyboard */,
+				43358AFC19C3AAAA005C57D1 /* Main_iPad.storyboard */,
+				43358AFF19C3AAAA005C57D1 /* NRViewController.h */,
+				43358B0019C3AAAA005C57D1 /* NRViewController.m */,
+				43358B0219C3AAAA005C57D1 /* Images.xcassets */,
+				43358AEE19C3AAAA005C57D1 /* Supporting Files */,
+			);
+			path = NimrodIOS;
+			sourceTree = "<group>";
+		};
+		43358AEE19C3AAAA005C57D1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				43358AEF19C3AAAA005C57D1 /* NimrodIOS-Info.plist */,
+				43358AF019C3AAAA005C57D1 /* InfoPlist.strings */,
+				43358AF319C3AAAA005C57D1 /* main.m */,
+				43358AF519C3AAAA005C57D1 /* NimrodIOS-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		43358AE519C3AAAA005C57D1 /* NimrodIOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 43358B1619C3AAAB005C57D1 /* Build configuration list for PBXNativeTarget "NimrodIOS" */;
+			buildPhases = (
+				43358AE219C3AAAA005C57D1 /* Sources */,
+				43358AE319C3AAAA005C57D1 /* Frameworks */,
+				43358AE419C3AAAA005C57D1 /* Resources */,
+			);
+			buildRules = (
+				43358B1F19C3ABB5005C57D1 /* PBXBuildRule */,
+			);
+			dependencies = (
+			);
+			name = NimrodIOS;
+			productName = NimrodIOS;
+			productReference = 43358AE619C3AAAA005C57D1 /* NimrodIOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		43358A9D19C3A057005C57D1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = NR;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "___FULLUSERNAME___";
+			};
+			buildConfigurationList = 43358AA019C3A057005C57D1 /* Build configuration list for PBXProject "IOSNimrod" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 43358A9C19C3A057005C57D1;
+			productRefGroup = 43358AA619C3A057005C57D1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				43358AE519C3AAAA005C57D1 /* NimrodIOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		43358AE419C3AAAA005C57D1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43358AFE19C3AAAA005C57D1 /* Main_iPad.storyboard in Resources */,
+				43358B0319C3AAAA005C57D1 /* Images.xcassets in Resources */,
+				43358AFB19C3AAAA005C57D1 /* Main_iPhone.storyboard in Resources */,
+				43358AF219C3AAAA005C57D1 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		43358AE219C3AAAA005C57D1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43358B1E19C3AB01005C57D1 /* test.nim in Sources */,
+				43358B0119C3AAAA005C57D1 /* NRViewController.m in Sources */,
+				43358AF819C3AAAA005C57D1 /* NRAppDelegate.m in Sources */,
+				43358AF419C3AAAA005C57D1 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		43358AF019C3AAAA005C57D1 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				43358AF119C3AAAA005C57D1 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		43358AF919C3AAAA005C57D1 /* Main_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				43358AFA19C3AAAA005C57D1 /* Base */,
+			);
+			name = Main_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		43358AFC19C3AAAA005C57D1 /* Main_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				43358AFD19C3AAAA005C57D1 /* Base */,
+			);
+			name = Main_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		43358AD419C3A058005C57D1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		43358AD519C3A058005C57D1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		43358B1719C3AAAB005C57D1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32BIT)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NimrodIOS/NimrodIOS-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "NimrodIOS/NimrodIOS-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "armv7 armv7s";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		43358B1819C3AAAB005C57D1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32BIT)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NimrodIOS/NimrodIOS-Prefix.pch";
+				INFOPLIST_FILE = "NimrodIOS/NimrodIOS-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "armv7 armv7s";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		43358AA019C3A057005C57D1 /* Build configuration list for PBXProject "IOSNimrod" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				43358AD419C3A058005C57D1 /* Debug */,
+				43358AD519C3A058005C57D1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		43358B1619C3AAAB005C57D1 /* Build configuration list for PBXNativeTarget "NimrodIOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				43358B1719C3AAAB005C57D1 /* Debug */,
+				43358B1819C3AAAB005C57D1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 43358A9D19C3A057005C57D1 /* Project object */;
+}
