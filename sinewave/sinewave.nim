@@ -1,9 +1,10 @@
 import portaudio as PA
-import math
+from math import sin, pi
 
 type
   TUserData = object
     count : int64
+  TFloatBuffer {.unchecked.} = array[0..0, float32]
 
 let samplerate = 44100.0
 
@@ -13,7 +14,7 @@ proc streamCallback(inBuf, outBuf: pointer,
                     statusFlags: TStreamCallbackFlags,
                     userData: pointer): cint {.cdecl.} =
   var
-    outBuf = cast[ptr array[0xffffffff, float32]](outBuf)
+    outBuf = cast[ptr TFloatBuffer](outBuf)
     userData = cast[ptr TUserData](userData)
 
   for i in 0.. <framesPerBuf.int:
