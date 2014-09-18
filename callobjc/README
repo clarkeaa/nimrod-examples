@@ -1,0 +1,1 @@
+hacks the [] operator to mimic objc message sends inside a statement list macro
