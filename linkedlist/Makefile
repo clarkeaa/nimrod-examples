@@ -1,4 +1,4 @@
 linkedlist: linkedlist.nim
-	nimrod c linkedlist.nim
+	nim c linkedlist.nim
 clean:
 	rm -rf nimcache
