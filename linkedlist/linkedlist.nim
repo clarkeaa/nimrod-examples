@@ -7,10 +7,10 @@ proc cons[T](ll : ref LinkedList[T], newData : T) :
   ref LinkedList[T] =
   return (ref LinkedList[T])(data: newData, next: ll)
 
-proc foreach[T](ll : ref LinkedList[T], func : proc(t:T)) =
+proc foreach[T](ll : ref LinkedList[T], fun : proc(t:T)) =
   if ll != nil:
-    func(ll.data)
-    foreach(ll.next, func)
+    fun(ll.data)
+    foreach(ll.next, fun)
 
 var ll : ref LinkedList[int] = nil
 ll = cons(ll, 1)
