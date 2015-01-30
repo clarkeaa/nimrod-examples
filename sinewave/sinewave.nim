@@ -1,5 +1,5 @@
 import portaudio as PA
-from math import sin, pi
+from math import sin, PI
 
 type
   TUserData = object
@@ -18,21 +18,21 @@ proc streamCallback(inBuf, outBuf: pointer,
     userData = cast[ptr TUserData](userData)
 
   for i in 0.. <framesPerBuf.int:
-    var val = 0.4 * sin((2.0 * pi * 440.0 * userData.count.float32) / samplerate)
+    var val = 0.4 * sin((2.0 * PI * 440.0 * userData.count.float32) / samplerate)
     outBuf[i] = val
     userData.count += 1
 
   PA.scrContinue.cint
 
 template check(call : expr) =
-  assert(cast[TErrorCode](call) == PA.noError)
+  assert(cast[TErrorCode](call) == PA.NoError)
 
 var
   stream: PStream
   userData = TUserData(count:0)
 
-check(PA.initialize())
-check(PA.openDefaultStream(cast[PStream](stream.addr),
+check(PA.Initialize())
+check(PA.OpenDefaultStream(cast[PStream](stream.addr),
                            numInputChannels = 0,
                            numOutputChannels = 1,
                            sampleFormat = sfFloat32,
@@ -40,8 +40,8 @@ check(PA.openDefaultStream(cast[PStream](stream.addr),
                            framesPerBuffer = 512,
                            streamCallback = streamCallback,
                            userData = cast[pointer](userData.addr)))
-check(PA.startStream(stream))
-PA.sleep(2000)
-check(PA.stopStream(stream))
-check(PA.closeStream(stream))
-check(PA.terminate())
+check(PA.StartStream(stream))
+PA.Sleep(2000)
+check(PA.StopStream(stream))
+check(PA.CloseStream(stream))
+check(PA.Terminate())
