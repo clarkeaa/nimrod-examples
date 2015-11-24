@@ -28,11 +28,11 @@
 			fileType = pattern.proxy;
 			isEditable = 1;
 			outputFiles = (
-				"$(DERIVED_FILE_DIR)/stdlib_system.m",
+				"$(DERIVED_FILE_DIR)/system.m",
 				"$(DERIVED_FILE_DIR)/$(INPUT_FILE_BASE).h",
 				"$(DERIVED_FILE_DIR)/$(INPUT_FILE_BASE).m",
 			);
-			script = "nimrod objc --noMain  --app:lib \\\n--nimcache:${DERIVED_FILE_DIR} --compileOnly \\\n--header --cpu:i386 ${INPUT_FILE_PATH}";
+			script = "PATH=${PATH}:${HOME}/bin\nnim objc --noMain  --app:lib \\\n--nimcache:${DERIVED_FILE_DIR} --compileOnly \\\n--header --cpu:i386 ${INPUT_FILE_PATH}";
 		};
 /* End PBXBuildRule section */
 
@@ -58,7 +58,7 @@
 		43358B0019C3AAAA005C57D1 /* NRViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NRViewController.m; sourceTree = "<group>"; };
 		43358B0219C3AAAA005C57D1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		43358B1C19C3AADD005C57D1 /* test.nim */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test.nim; sourceTree = "<group>"; };
-		43358B2019C3ADF5005C57D1 /* nimbase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = nimbase.h; sourceTree = "<group>"; };
+		43A66F311C044D450072FCC9 /* nimbase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = nimbase.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,7 +118,7 @@
 		43358AED19C3AAAA005C57D1 /* NimrodIOS */ = {
 			isa = PBXGroup;
 			children = (
-				43358B2019C3ADF5005C57D1 /* nimbase.h */,
+				43A66F311C044D450072FCC9 /* nimbase.h */,
 				43358B1C19C3AADD005C57D1 /* test.nim */,
 				43358AF619C3AAAA005C57D1 /* NRAppDelegate.h */,
 				43358AF719C3AAAA005C57D1 /* NRAppDelegate.m */,
@@ -337,9 +337,11 @@
 				);
 				INFOPLIST_FILE = "NimrodIOS/NimrodIOS-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "";
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
@@ -363,6 +365,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "";
 				VALIDATE_PRODUCT = YES;
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
@@ -388,6 +391,7 @@
 				43358B1819C3AAAB005C57D1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

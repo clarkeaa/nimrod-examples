@@ -16,7 +16,7 @@ proc name(self: ptr Foobar) : cstring {.exportc, cdecl.} =
     result = self.fname
     
 proc freeFoobar(self: ptr Foobar) {.exportc, cdecl.} =
-    free(self)
+    dealloc(self)
     
 proc NRViewControllerDoSomething() {.importc: "NRViewControllerDoSomething".}
 
